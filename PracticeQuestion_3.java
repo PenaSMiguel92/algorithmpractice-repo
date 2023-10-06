@@ -1,5 +1,3 @@
-package algorithms;
-
 public class PracticeQuestion_3 {
 	/*
 	 * Prompt: Write an algorithm that takes a string and returns 
@@ -12,4 +10,7 @@ public class PracticeQuestion_3 {
 	 * 		Input: "acccabdefcaebcafcbdad"
 	 * 		Output: 6 (The answer is "cabdef", with the length of 6.)
 	 */
+	public int findLength(String word) {
+		return 1;
+	}
 }

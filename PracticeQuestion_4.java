@@ -1,5 +1,3 @@
-package algorithms;
-
 public class PracticeQuestion_4 {
 	/*
 	 * Prompt: Given an array of integers, nums, and a target, write
@@ -12,4 +10,7 @@ public class PracticeQuestion_4 {
 	 * 		INPUT: nums = [2,7,11,15], target=9
 	 * 		OUTPUT: [0,1] (because nums[0] is 2, and nums[1] is 7 || nums[0] + nums[1] == 9)
 	 */
+	public int[] findUniqueSum(int[] nums, int target) {
+		return new int[] {};
+	}
 }

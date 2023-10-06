@@ -1,5 +1,3 @@
-package algorithms;
-
 public class PracticeQuestion_1 {
 	/*
 	 * Prompt: Given a array containing 'n' distinct numbers from a range of
