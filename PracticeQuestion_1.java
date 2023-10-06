@@ -12,13 +12,8 @@ public class PracticeQuestion_1 {
 	 * 		INPUT: [13,3,7,11,4,6,2,10,9,5,8,1]
 	 * 		OUTPUT: 12
 	 * 
-	 * Pseudocode:
-	 * FUNCTION findMissingNumber(arr: ARRAY of INTEGERS) -> INTEGER:
-	 * 		SET sortedArr to Arrays.sort(arr)
-	 * 
-	 * 		FOR i FROM 1 TO length of sortedArr
-	 * 			IF i NOT EQUAL to sortedArr[i - 1]
-	 * 				RETURN i
 	 */
-	
+	public int findMissingNumber(int[] nums) {
+		return 1;
+	}
 }
