@@ -15,6 +15,9 @@ public class Main {
         System.out.println(pq3.findLength("acccabdefcaebcafcbdad"));
         
         PracticeQuestion_4 pq4 = new PracticeQuestion_4();
+        System.out.println(Arrays.toString(pq4.findUniqueSum(new int[] { 2, 7, 11, 5 }, 9)));
+        System.out.println(Arrays.toString(pq4.findUniqueSum(new int[] { 2, 11, 15, 5, 7 }, 9)));
+
         PracticeQuestion_5 pq5 = new PracticeQuestion_5();
         PracticeQuestion_6 pq6 = new PracticeQuestion_6();
         PracticeQuestion_7 pq7 = new PracticeQuestion_7();

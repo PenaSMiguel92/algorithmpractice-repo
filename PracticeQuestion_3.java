@@ -1,6 +1,5 @@
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collector;
 
 public class PracticeQuestion_3 {
 	/*
