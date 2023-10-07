@@ -1,3 +1,7 @@
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collector;
+
 public class PracticeQuestion_3 {
 	/*
 	 * Prompt: Write an algorithm that takes a string and returns 
@@ -11,6 +15,18 @@ public class PracticeQuestion_3 {
 	 * 		Output: 6 (The answer is "cabdef", with the length of 6.)
 	 */
 	public int findLength(String word) {
-		return 1;
+		Set<Character> uniqueChars = new HashSet<>();
+		char[] charArr = word.toCharArray();
+		int maxLength = Integer.MIN_VALUE;
+		for (int i = 0; i < charArr.length; i++) {
+			if (!uniqueChars.add(charArr[i])) {
+				if (uniqueChars.size() > maxLength)
+					maxLength = uniqueChars.size();
+				uniqueChars.clear();
+			}
+				
+		}
+
+		return maxLength;
 	}
 }
