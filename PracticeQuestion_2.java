@@ -9,7 +9,25 @@ public class PracticeQuestion_2 {
 	 * Pseudocode:
 	 * FUNCTION rotateArray(arr: ARRAY of INTEGERS, k: INTEGER) -> ARRAY of INTEGERS:
 	 */
-	public void rotateArray(int[] arr, int k) {
+	public int[] rotateArray(int[] arr, int k) {
+		int n = arr.length;
+		k = k % n;
+		if (k == 0)
+			return arr;
+		
+		int[] temp = new int[k];
+		for (int i = 0; i < k; i++) {
+			temp[i] = arr[n - k + i];
+		}
 
+		for (int i = n - 1; i >= k; i--) {
+			arr[i] = arr[i - k];
+		}
+
+		for (int i = 0; i < k; i++) {
+			arr[i] = temp[i];
+		}
+
+		return arr;
 	}
 }
