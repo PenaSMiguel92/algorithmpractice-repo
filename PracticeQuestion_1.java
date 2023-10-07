@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class PracticeQuestion_1 {
 	/*
 	 * Prompt: Given a array containing 'n' distinct numbers from a range of
@@ -12,6 +14,11 @@ public class PracticeQuestion_1 {
 	 * 
 	 */
 	public int findMissingNumber(int[] nums) {
-		return 1;
+		Arrays.sort(nums);
+		for (int i = 0; i < nums.length; i++) {
+			if (i + 1 != nums[i])
+				return i + 1;
+		}
+		return -1;
 	}
 }
