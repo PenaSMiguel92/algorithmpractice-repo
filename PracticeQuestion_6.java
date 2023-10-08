@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class PracticeQuestion_6 {
     /*
      * Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], 
@@ -19,6 +22,37 @@ public class PracticeQuestion_6 {
      */
 
     public String decodeString(String encodedString) {
-        return "";
+        Deque<Character> charDeque = new ArrayDeque<>();
+        char[] charArr = encodedString.toCharArray();
+        int n = charArr.length;
+        for (int i = 0; i < n; i++) {
+            if (charArr[i] != ']') {
+                charDeque.push(charArr[i]);
+            } else {
+                StringBuilder temp = new StringBuilder();
+                while (charDeque.peek() != '[') {
+                    temp.append(charDeque.pop());
+                }
+                charDeque.pop();
+                StringBuilder num = new StringBuilder();
+                while (charDeque.size() > 0 && Character.isDigit(charDeque.peek())) {
+                    num.append(charDeque.pop());
+                }
+                temp = temp.reverse();
+                int val = Integer.parseInt(num.reverse().toString());
+                while (val-- > 0) {
+                    for (int j = 0; j < temp.length(); j++) {
+                        charDeque.push(temp.charAt(j));
+                    }
+                }
+            }
+        }
+        char[] result = new char[charDeque.size()];
+        for (int i = charDeque.size() - 1; i >= 0; i--) {
+            result[i] = charDeque.pop();
+        }
+        return new String(result);
     }
+    
+
 }

@@ -29,6 +29,10 @@ public class Main {
         System.out.print(pq5.compressString(arr3));
         System.out.println(Arrays.toString(arr3));
         PracticeQuestion_6 pq6 = new PracticeQuestion_6();
+        System.out.println(pq6.decodeString("3[a]2[bc]"));
+        System.out.println(pq6.decodeString("3[a2[c]]"));
+        System.out.println(pq6.decodeString("2[abc]3[cd]ef"));
+
         PracticeQuestion_7 pq7 = new PracticeQuestion_7();
         
 
