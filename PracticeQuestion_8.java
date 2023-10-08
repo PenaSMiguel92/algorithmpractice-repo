@@ -1,6 +1,6 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class PracticeQuestion_8 {
     /*
@@ -25,27 +25,24 @@ public class PracticeQuestion_8 {
      */
 
     public String predictPartyVictory(String senate) {
-        Deque<Character> charQueue = new ArrayDeque<>();
-        for (char ch : senate.toCharArray()) {
-            charQueue.offer(ch);
+        Queue<Integer> radiant = new LinkedList<>();
+        Queue<Integer> dire = new LinkedList<>();
+        for (int i = 0; i < senate.length(); i++) {
+            if (senate.charAt(i) == 'R')
+                radiant.offer(i);
+            else
+                dire.offer(i);
         }
         
-        while (charQueue.size() > 0 && charQueue.contains('R') && charQueue.contains('D')) {
-            char curTurn = charQueue.pop();
-            Iterator<Character> itChar = charQueue.iterator();
-            while (itChar.hasNext()) {
-                char val = itChar.next();
-                if (val != curTurn) {
-                    itChar.remove();
-                    break;
-                }
+        while (!radiant.isEmpty() && !dire.isEmpty()) {
+            int val1 = radiant.poll();
+            int val2 = dire.poll();
+            if (val1 < val2) {
+                radiant.offer(senate.length() + val1);
+            } else {
+                dire.offer(senate.length() + val2);
             }
-            charQueue.offer(curTurn);
         }
-
-        if (charQueue.contains('R'))
-            return "Radiant";
-        else    
-            return "Dire";
+        return radiant.isEmpty() ? "Dire" : "Radiant";
     }
 }

@@ -34,6 +34,10 @@ public class Main {
         System.out.println(pq6.decodeString("2[abc]3[cd]ef"));
 
         PracticeQuestion_7 pq7 = new PracticeQuestion_7();
+        System.out.println(pq7.closeStrings("abc", "bca"));
+        System.out.println(pq7.closeStrings("a", "aa"));
+        System.out.println(pq7.closeStrings("cabbba", "abbccc"));
+        
         PracticeQuestion_8 pq8 = new PracticeQuestion_8();
         System.out.println(pq8.predictPartyVictory("RD"));
         System.out.println(pq8.predictPartyVictory("RDD"));
