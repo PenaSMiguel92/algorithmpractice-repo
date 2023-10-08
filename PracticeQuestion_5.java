@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class PracticeQuestion_5 {
     /*
      * Given an array of characters chars, compress it using the following algorithm:
@@ -20,7 +23,39 @@ public class PracticeQuestion_5 {
      * Output: ["a"]
      */
 
-    public void compressString(char[] chars) {
-        
+    public int compressString(char[] chars) {
+        if (chars.length == 1)
+            return chars.length;
+
+        Set<Character> uniqueChars = new HashSet<>();
+        uniqueChars.add(chars[0]);
+        char prevChar = chars[0];
+        int count = 1;
+        int ans = 0;
+        for (int i = 1; i < chars.length; i++) {
+            if (!uniqueChars.add(chars[i]))
+                count++;
+            else {
+                prevChar = i - 1 < 0 ? chars[0] : chars[i - 1];
+                chars[ans++] = prevChar;
+                if (count > 1) {
+                    String value = Integer.toString(count);
+                    int at = 0;
+                    while (at < value.length())
+                        chars[ans++] = value.charAt(at++);
+                }
+                count = 1;
+            }
+        }
+        if (count > 0) {
+            chars[ans++] = chars[chars.length-1];
+            if (count > 1) {
+                    String value = Integer.toString(count);
+                    int at = 0;
+                    while (at < value.length())
+                        chars[ans++] = value.charAt(at++);
+                }
+        }
+        return ans;    
     }
 }

@@ -19,6 +19,15 @@ public class Main {
         System.out.println(Arrays.toString(pq4.findUniqueSum(new int[] { 2, 11, 15, 5, 7 }, 9)));
 
         PracticeQuestion_5 pq5 = new PracticeQuestion_5();
+        char[] arr1 = { 'a', 'a', 'b', 'b', 'c', 'c', 'c' };
+        char[] arr2 = { 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b' };
+        char[] arr3 = { 'a' };
+        System.out.print(pq5.compressString(arr1));
+        System.out.println(Arrays.toString(arr1));
+        System.out.print(pq5.compressString(arr2));
+        System.out.println(Arrays.toString(arr2));
+        System.out.print(pq5.compressString(arr3));
+        System.out.println(Arrays.toString(arr3));
         PracticeQuestion_6 pq6 = new PracticeQuestion_6();
         PracticeQuestion_7 pq7 = new PracticeQuestion_7();
         
