@@ -1,3 +1,7 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Iterator;
+
 public class PracticeQuestion_8 {
     /*
      * In the world of Dota2, there are two parties: the Radiant and the Dire.
@@ -21,6 +25,27 @@ public class PracticeQuestion_8 {
      */
 
     public String predictPartyVictory(String senate) {
-        return "";
+        Deque<Character> charQueue = new ArrayDeque<>();
+        for (char ch : senate.toCharArray()) {
+            charQueue.offer(ch);
+        }
+        
+        while (charQueue.size() > 0 && charQueue.contains('R') && charQueue.contains('D')) {
+            char curTurn = charQueue.pop();
+            Iterator<Character> itChar = charQueue.iterator();
+            while (itChar.hasNext()) {
+                char val = itChar.next();
+                if (val != curTurn) {
+                    itChar.remove();
+                    break;
+                }
+            }
+            charQueue.offer(curTurn);
+        }
+
+        if (charQueue.contains('R'))
+            return "Radiant";
+        else    
+            return "Dire";
     }
 }
