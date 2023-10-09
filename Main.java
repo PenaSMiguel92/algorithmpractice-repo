@@ -48,7 +48,9 @@ public class Main {
         System.out.println(pq9.findPeakElement(new int[] { 1, 2, 3, 1 }));
         System.out.println(pq9.findPeakElement(new int[] { 1, 2, 1, 3, 5, 6, 4 }));
         System.out.println(pq9.findPeakElement(new int[] { 1, 1, 1, 1 }));
-        System.out.println(pq9.findPeakElement(new int[] {2, 1}));
+        System.out.println(pq9.findPeakElement(new int[] { 2, 1 }));
         
+        PracticeQuestion_10 pq10 = new PracticeQuestion_10();
+        System.out.println(pq10.letterCombinations("23"));
     }
 }
