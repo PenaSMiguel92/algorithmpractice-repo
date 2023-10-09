@@ -44,6 +44,11 @@ public class Main {
         System.out.println(pq8.predictPartyVictory("DRRDRDRDRDDRDRDR"));
         System.out.println(pq8.predictPartyVictory("DDRRR"));
         
-
+        PracticeQuestion_9 pq9 = new PracticeQuestion_9();
+        System.out.println(pq9.findPeakElement(new int[] { 1, 2, 3, 1 }));
+        System.out.println(pq9.findPeakElement(new int[] { 1, 2, 1, 3, 5, 6, 4 }));
+        System.out.println(pq9.findPeakElement(new int[] { 1, 1, 1, 1 }));
+        System.out.println(pq9.findPeakElement(new int[] {2, 1}));
+        
     }
 }
